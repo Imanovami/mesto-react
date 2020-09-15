@@ -1,0 +1,18 @@
+@import url(__photo/element__photo.css);
+@import url(__title/element__titile.css);
+@import url(__like/element__like.css);
+@import url(__like_active/element__like_active.css);
+@import url(__trash/element__trash.css);
+@import url(__number/element__number.css);
+@import url(__trash/element__trash_render.css);
+
+
+.element {
+  min-width: 282px;
+  max-height: 361px;
+  background-color: #FFF;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 239px 1fr;
+  grid-template-rows: repeat(2,min-content);
+}
