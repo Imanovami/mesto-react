@@ -8,13 +8,9 @@ const config = {
 };
 
 const popupPhoto = document.querySelector('.popup_type_photo');
-const popupPhotoTitle = popupPhoto.querySelector('.popup__description');
-const popupBigPhoto = popupPhoto.querySelector('.popup__image-big');
-const containerListSelector =  '.elements__container';
-const avatarPlace = document.querySelector('.profile__avatar')
 
 
 
 
-export {popupPhotoTitle, popupBigPhoto, popupPhoto,
-     config, containerListSelector, avatarPlace}
+
+export {popupPhoto, config,}

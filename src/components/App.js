@@ -35,8 +35,6 @@ function App() {
     setSelectedCard(null)
   }
 
-
-
   return (
       <div className="container">
       <div className="root">
@@ -58,12 +56,14 @@ function App() {
         onClose={closeAllPopups}
         >
           <label className="popup__field">
-            <input className="popup__input popup__input_type_name" type="text" id="name-input" name="name-input"
+            <input className="popup__input popup__input_type_name" type="text" id="name-input"
+                   name="name-input"
                    required minLength="2" maxLength="40" placeholder="Имя профиля"/>
             <span id='name-input-error' />
           </label>
           <label className="popup__field">
-            <input className="popup__input popup__input_type_job" type="text" id="job-input" name="job-input" required
+            <input className="popup__input popup__input_type_job" type="text" id="job-input"
+                   name="job-input" required
                    minLength="2" maxLength="200" placeholder="Описание профиля"/>
             <span id='job-input-error' />
           </label>
