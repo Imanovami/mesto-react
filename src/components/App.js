@@ -42,10 +42,12 @@ function App() {
             const newCards = cards.map((c) => c._id === card._id ? newCard : c);
             setCards(newCards);
              })
+                .catch((err) => console.log(err))
         :
             ApiR.setLike(card._id).then((newCard) => {
             const newCards = cards.map((c) => c._id === card._id ? newCard : c);
             setCards(newCards);})
+                .catch((err) => console.log(err))
     }
 
     function handleCardDelete(card) {
@@ -72,26 +74,26 @@ function App() {
 
    function handleUpdateUser(onUpdateUser) {
       ApiR.changeProfile(onUpdateUser.name, onUpdateUser.about).then (res => {
-      setCurrentUser(res);
+          setCurrentUser(res);
+          setIsEditProfileOpen(false)
     })
           .catch((err) => console.log(err))
-    setIsEditProfileOpen(false)
   }
 
     function handleUpdateAvatar(onUpdateAvatar) {
-      ApiR.renderAvatar(onUpdateAvatar.avatar).then(res => {
-      setCurrentUser(res);
+        ApiR.renderAvatar(onUpdateAvatar.avatar).then(res => {
+            setCurrentUser(res);
+            setIsAvatarOpen(false)
       })
           .catch((err) => console.log(err))
-      setIsAvatarOpen(false)
     }
 
     function handleAddPlaceSubmit(onAddPlace){
-      ApiR.postCard(onAddPlace.name, onAddPlace.link).then(res => {
-        setCards([res, ...cards]);
+        ApiR.postCard(onAddPlace.name, onAddPlace.link).then(res => {
+            setCards([res, ...cards]);
+            setIsAddCardOpen(false)
       })
           .catch((err) => console.log(err))
-      setIsAddCardOpen(false)
     }
 
 
